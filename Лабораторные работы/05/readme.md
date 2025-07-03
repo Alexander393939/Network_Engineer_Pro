@@ -81,7 +81,7 @@ ip route 0.0.0.0 0.0.0.0 10.10.29.26 254
 
 ![SLA](scrn/sla.png)
 
-конфиг R28 
+# конфиг R28 
 ```
 R28#show running-config
 Building configuration...

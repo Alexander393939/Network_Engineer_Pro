@@ -71,7 +71,7 @@ neighbor 10.10.232.25 route-reflector-client
 
 neighbor 10.10.232.26 remote-as 520
 neighbor 10.10.232.26 update-source Loopback0
-neighbor 10.10.232.26 route-reflector-client\
+neighbor 10.10.232.26 route-reflector-client
 
 network 10.10.232.23 mask 255.255.255.255
 no auto-summary
@@ -129,7 +129,39 @@ end
 
 R15
 ```
+conf t
+
+route-map FROM_LAMAS permit 10
+set local-preference 200
+exit
+
+
+router bgp 1001
+neighbor 10.10.2.21 remote-as 301
+neighbor 10.10.2.21 description eBGP-TO-LAMAS
+neighbor 10.10.2.21 route-map FROM_LAMAS 
+
+end
+
 ```
 
+В R14 появились маршруты с local-pref=200
+![R14](scrn/R14LP.png)
 
+
+
+### Настройте офиса С.-Петербург так, чтобы трафик до любого офиса распределялся по двум линкам одновременно. AS 2042.
+
+R18
+
+```
+conf t
+router bgp 2042
+maximum-path 2
+end
+```
+
+![R18mp](scrn/R18path2.png)
+
+### Все сети в лабораторной работе должны иметь IP связность.
 

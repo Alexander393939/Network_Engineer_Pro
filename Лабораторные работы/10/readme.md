@@ -169,6 +169,12 @@ end
 
 ![R15](scrn/R15.png)
 
+
+
+
 ping VPC8 VPC30<br/>
+
+
+
 
 ![VPC1](scrn/VPC1-VPC8-VPC30.png)

@@ -24,7 +24,6 @@ tunnel source Loopback0
 tunnel destination 10.10.232.18
 exit
 
-ip route 10.10.232.18 255.255.255.255 10.10.1.22
 ```
 
 R18
@@ -37,8 +36,6 @@ ip ospf 1 area 0
 tunnel source Loopback0
 tunnel destination 10.10.232.15
 exit
-
-ip route 10.10.232.15 255.255.255.255 10.10.25.24
 ```
 
 ![R15](scrn/R15GRE.png)
